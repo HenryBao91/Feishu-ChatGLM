@@ -52,6 +52,7 @@ coverage.xml
 cover/
 */.idea/*
 .idea/
+src/data
 
 # Translations
 *.mo
