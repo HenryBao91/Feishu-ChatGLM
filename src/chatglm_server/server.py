@@ -87,4 +87,4 @@ if __name__ == '__main__':
     tokenizer = AutoTokenizer.from_pretrained(MODEL_PATH, trust_remote_code=True)
     model = load_model_on_gpus(MODEL_PATH, num_gpus=2)
     model.eval()
-    uvicorn.run(app, host="0.0.0.0", port=8862)
+    uvicorn.run(app, host="0.0.0.0", port=app_config.CHATGLM_MODEL_PORT)

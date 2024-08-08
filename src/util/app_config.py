@@ -14,7 +14,6 @@ class AppConfig:
     BOT_NAME: str
     # endrequired
     LLM: str
-    CHATGLM_API_HOST: str
     # required if IS_AZURE is False
     OPENAI_KEY: str
     # endrequired if IS_AZURE is False
@@ -31,6 +30,8 @@ class AppConfig:
     PROMPT_DESCRIPTION_LIST: list
     PROMPT_VALUE_LIST: list
     CHATGLM_MODEL_PATH: str
+    CHATGLM_MODEL_PORT: str
+    CHATGLM_API_HOST: str
 
     @classmethod
     def from_dict(cls, env):      
@@ -68,6 +69,8 @@ class AppConfig:
             raise Exception('DEFAULT_PROMPT is required')
         if not self.CHATGLM_MODEL_PATH:
             raise Exception('CHATGLM_MODEL_PATH is required')
+        if not self.CHATGLM_MODEL_PORT:
+            raise Exception('CHATGLM_MODEL_PORT is required')
 
         # PROMPT_DESCRIPTION_LIST and PROMPT_VALUE_LIST must have the same length
         if len(self.PROMPT_DESCRIPTION_LIST) != len(self.PROMPT_VALUE_LIST):

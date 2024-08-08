@@ -35,7 +35,8 @@ LLM: 'chatGLM'
 # LLM: 'openai'
 
 # chatGLM 配置
-CHATGLM_API_HOST: http://localhost:8000  # 自己搭建的chatGLM，如果是在本机默认的脚本，则不用修改
+CHATGLM_API_PORT: 8860
+CHATGLM_API_HOST: http://localhost  # 自己搭建的chatGLM，如果是在本机默认的脚本，则不用修改
 CHATGLM_MODEL_PATH: /data/THUDM/chatglm3-6b # 设置 ChatGLM 模型路径
 
 # OpenAI 配置

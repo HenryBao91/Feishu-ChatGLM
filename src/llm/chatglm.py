@@ -31,7 +31,7 @@ def get_gpt_response(data):
         response.text: '{"response":"中国北方冷。","history":[["中国南方热吗？用10个字回答","中国南方热。"],["北方呢？用10个字回答","中国北方冷。"]],"status":200,"time":"2023-04-26 02:09:24"}'
     """
 
-    response = requests.post(app_config.CHATGLM_API_HOST, json=data)
+    response = requests.post(f"{app_config.CHATGLM_API_HOST}:{app_config.CHATGLM_MODEL_PORT}", json=data)
     response_dict = json.loads(response.text)
     return response_dict
 
